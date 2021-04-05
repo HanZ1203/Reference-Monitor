@@ -55,6 +55,18 @@ a123账户可以读取任何资源
   }
 }
 ```
+### 策略配置规则
+策略获取
+- offered by parents：继承而来的权限配置，与父辈应用权限配置内容一样。
+- offered by default：属于自己量身定做的权限配置。
+策略发放
+- exposed by app：由应用发放，一个应用只能发放自己拥有的权限。
+- exposed by default：由用户定义或运营商定义。
 ## Reference Monitor
+用于保证访问控制策略的顺利实施，即所有请求必须通过上述访问控制策略。
 ### 定义
+- Non-bypassable：不可以被攻击者避开。
+- Evaluable：能够被管理者管理、测试和控制。
+- Always invoked：时刻被调用。
+- Tamper-proof：不易受到攻击。
 ### 实现
