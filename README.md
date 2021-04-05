@@ -28,10 +28,10 @@
 - 版本控制属性：Version，字符串。
 - 具有映射关系的属性：spec
   - 主体匹配属性：UID，字符串。
-  - 资源匹配属性：
+  - 资源匹配属性：resourceAttributes
     - 资源路径：resourcePath，字符串。
     - readonly：键入布尔值，如果为 true，则表示该策略仅可读。
-  - 非资源匹配属性：
+  - 非资源匹配属性：nonResourceAttributes
     - 请求路径：nonResourcePath，字符串。
     - 请求动词：verb，字符串。
 
@@ -59,6 +59,7 @@ a123账户可以读取任何资源
 策略获取
 - offered by parents：继承而来的权限配置，与父辈应用权限配置内容一样。
 - offered by default：属于自己量身定做的权限配置。
+
 策略发放
 - exposed by app：由应用发放，一个应用只能发放自己拥有的权限。
 - exposed by default：由用户定义或运营商定义。
