@@ -29,7 +29,7 @@
 - 具有映射关系的属性：spec
   - 主体匹配属性：UID，字符串。
   - 资源匹配属性：
-    - 资源ID：resource，字符串。
+    - 资源路径：resourcePath，字符串。
     - readonly：键入布尔值，如果为 true，则表示该策略仅可读。
   - 非资源匹配属性：
     - 请求路径：nonResourcePath，字符串。
@@ -39,7 +39,7 @@
 
 a123账户可以读取任何资源
 ```
-{"Version": "abac.v1", "spec": {"uid": "a123", "resource": "*", "readonly": true}}
+{"Version": "abac.v1", "spec": {"uid": "a123", "resourcePath": "*", "readonly": true}}
 ```
 
 请求示例：
@@ -50,7 +50,7 @@ a123账户可以读取任何资源
   "token": "a123token",
     "resourceAttributes": {
       "verb": "get",
-      "resource": "storage1"
+      "resourcePath": "/storage"
     }
   }
 }
@@ -70,3 +70,6 @@ a123账户可以读取任何资源
 - Always invoked：时刻被调用。
 - Tamper-proof：不易受到攻击。
 ### 实现
+在连接建立阶段完成认证，即先认证后连接，避免来自非法身份的连接。
+
+在运行时完成授权，检查请求中的属性元组，与每一条策略进行匹配，若匹配成功则授权。
