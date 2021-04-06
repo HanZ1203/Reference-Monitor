@@ -35,7 +35,7 @@
     - 请求路径：nonResourcePath，字符串。
     - 请求动词：verb，字符串。
 
-策略定义：
+策略示例：
 
 a123账户可以读取任何资源
 ```
@@ -49,8 +49,8 @@ a123账户可以读取任何资源
   "spec": {
   "token": "a123token",
     "resourceAttributes": {
-      "verb": "get",
-      "resourcePath": "/storage"
+      "resourcePath": "/storage",
+      "verb": "get"
     }
   }
 }
