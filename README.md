@@ -45,9 +45,9 @@ a123账户可以读取任何资源
 请求示例：
 ```
 {
-  "apiVersion": "abac.v1",
+  "Version": "abac.v1",
   "spec": {
-  "token": "a123token",
+    "token": "a123token",
     "resourceAttributes": {
       "resourcePath": "/storage",
       "verb": "get"
